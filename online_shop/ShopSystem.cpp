@@ -12,20 +12,31 @@ void ShopSystem::addProduct(char* name, double price, double quantity)
 	products.push_back(newProduct);
 }
 
-User* ShopSystem::findUser(char* username, char* password)
+User* ShopSystem::findUser(const char* username, const char* password)
 {
-	/*
-	* searches through the vector users
-	* returns a pointer to the user if found
-	* else returns nullptr
-	*/
+	User* findU{ nullptr };
+	for (User& user : users) {
+		if (!strcmp(user.getUsername(), username)) {
+			findU = &user;
+			if (user.loginCheck(password)) {
+				return findU;
+			}
+			else {
+				findU = nullptr;
+			}
+		}
+	}
+	return findU;
 }
 
 Product* ShopSystem::findProduct(char* productName)
 {
-	/*
-	* searches through the vector products
-	* returns a pointer to the product if found
-	* else returns nullptr
-	*/
+	Product* findProd{ nullptr };
+	for (Product& product : products) {
+		if (!strcmpi(product.getName(), productName)) {
+			findProd = &product;
+			return findProd;
+		}
+	}
+	return findProd;
 }

@@ -11,7 +11,7 @@ private:
 public:
 	void addUser(char*, char*);
 	void addProduct(char*, double, double);
-	User* findUser(char*, char*);
+	User* findUser(const char*, const char*);
 	Product* findProduct(char*);
 };
 #endif // !_SHOPSYS_HPP_
