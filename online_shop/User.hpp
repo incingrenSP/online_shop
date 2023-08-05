@@ -10,8 +10,8 @@ private:
 public:
 	User(char*, char*);
 	~User();
-	char* getUsername();
-	bool loginCheck(char*);
+	char* getUsername() const;
+	bool loginCheck(const char*);
 	void addToCart(Product);
 	void removeFromCart(char*);
 	double checkout();
