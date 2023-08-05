@@ -8,11 +8,12 @@ private:
 	char* password;
 	Cart cart;
 public:
-	User(char* username, char* password);
+	User(char*, char*);
 	~User();
-	bool loginCheck(char* passEntered);
-	void addToCart(Product product);
-	void removeFromCart(char* productName);
+	char* getUsername();
+	bool loginCheck(char*);
+	void addToCart(Product);
+	void removeFromCart(char*);
 	double checkout();
 	void viewCart();
 };

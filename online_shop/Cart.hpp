@@ -10,8 +10,8 @@ class Cart
 private:
 	vector<Product> items;
 public:
-	void addToCart(Product product);
-	void removeFromCart(char* productName);
+	void addToCart(Product);
+	void removeFromCart(char*);
 	double getTotal();
 	int displayCart();
 };
