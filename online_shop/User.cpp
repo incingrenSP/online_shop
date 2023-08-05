@@ -15,6 +15,11 @@ User::~User()
 	delete[] password;
 }
 
+char* User::getUsername()
+{
+	return username;
+}
+
 bool User::loginCheck(char* passEntered)
 {
 	return strcmp(passEntered, password);

@@ -12,7 +12,7 @@ private:
 	double price;
 	int quantity;
 public:
-	Product(char* name, double price, int quantity);
+	Product(char*, double, int);
 	~Product();
 	char* getName();
 	double getPrice();
