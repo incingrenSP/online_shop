@@ -1,0 +1,139 @@
+// Class for Product
+class Product {
+private:
+    string name;
+    double price;
+    int quantity;
+
+public:
+    Product(string name, double price, int quantity) {
+        this->name = name;
+        this->price = price;
+        this->quantity = quantity;
+    }
+
+    string getName() {
+        return name;
+    }
+
+    double getPrice() {
+        return price;
+    }
+
+    int getQuantity() {
+        return quantity;
+    }
+};
+
+// Class for Cart
+class Cart {
+private:
+    vector<Product> items;
+
+public:
+    void addToCart(Product product) {
+        items.push_back(product);
+    }
+
+    void removeFromCart(string productName) {
+        // Find and remove the product from the cart
+    }
+
+    double getTotalPrice() {
+        double total = 0.0;
+        for (Product product : items) {
+            total += product.getPrice();
+        }
+        return total;
+    }
+
+    void displayCart() {
+        // Display the items in the cart with their names, prices, and quantities
+    }
+};
+
+// Class for User
+class User {
+private:
+    string username;
+    string password;
+    Cart cart;
+
+public:
+    User(string username, string password) {
+        this->username = username;
+        this->password = password;
+    }
+
+    bool login(string enteredPassword) {
+        return password == enteredPassword;
+    }
+
+    void addToCart(Product product) {
+        cart.addToCart(product);
+    }
+
+    void removeFromCart(string productName) {
+        cart.removeFromCart(productName);
+    }
+
+    double checkout() {
+        double totalPrice = cart.getTotalPrice();
+        // Process payment and complete the purchase
+        return totalPrice;
+    }
+
+    void viewCart() {
+        cart.displayCart();
+    }
+};
+
+// Class for Online Shopping System
+class OnlineShoppingSystem {
+private:
+    vector<User> users;
+    vector<Product> products;
+
+public:
+    void addUser(string username, string password) {
+        User newUser(username, password);
+        users.push_back(newUser);
+    }
+
+    void addProduct(string name, double price, int quantity) {
+        Product newProduct(name, price, quantity);
+        products.push_back(newProduct);
+    }
+
+    User* login(string username, string password) {
+        // Find the user in the list of users and return a pointer to it if found
+        // Return nullptr if not found or if the password is incorrect
+    }
+
+    Product* findProduct(string productName) {
+        // Find the product in the list of products and return a pointer to it if found
+        // Return nullptr if not found
+    }
+};
+
+// Main function
+int main() {
+    OnlineShoppingSystem shoppingSystem;
+
+    // Add users and products to the shopping system
+    // ...
+
+    // Login or sign up
+    User* currentUser = shoppingSystem.login("username", "password");
+
+    if (currentUser != nullptr) {
+        // User is logged in
+        // Perform shopping actions like adding products to the cart, viewing the cart, and checkout
+        // ...
+    } else {
+        // Invalid login credentials or user not found
+        // Handle the error
+    }
+
+    return 0;
+}
