@@ -1,5 +1,4 @@
-
-#ifndef _PRODUCT_HPP_
+#pragma once
 
 #include <iostream>
 #include <cstring>
@@ -19,4 +18,3 @@ public:
 	int getQuantity();
 };
 
-#endif // !_PRODUCT_HPP_

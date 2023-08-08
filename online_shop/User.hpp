@@ -1,4 +1,5 @@
-#ifndef _USER_HPP_
+#pragma once
+
 #include "Product.hpp"
 #include "Cart.hpp"
 
@@ -17,4 +18,4 @@ public:
 	double checkout();
 	void viewCart();
 };
-#endif // !_USER_HPP_
+

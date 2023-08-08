@@ -1,5 +1,5 @@
+#pragma once
 
-#ifndef _SHOPSYS_HPP_
 #include "Product.hpp"
 #include "Cart.hpp"
 #include "User.hpp"
@@ -10,8 +10,8 @@ private:
 	vector<Product> products;
 public:
 	void addUser(char*, char*);
-	void addProduct(char*, double, double);
+	void addProduct(char*, double, int);
 	User* findUser(const char*, const char*);
 	Product* findProduct(char*);
 };
-#endif // !_SHOPSYS_HPP_
+

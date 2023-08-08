@@ -6,7 +6,7 @@ void ShopSystem::addUser(char* username, char* password)
 	users.push_back(newUser);
 }
 
-void ShopSystem::addProduct(char* name, double price, double quantity)
+void ShopSystem::addProduct(char* name, double price, int quantity)
 {
 	Product newProduct(name, price, quantity);
 	products.push_back(newProduct);
@@ -33,7 +33,7 @@ Product* ShopSystem::findProduct(char* productName)
 {
 	Product* findProd{ nullptr };
 	for (Product& product : products) {
-		if (!strcmpi(product.getName(), productName)) {
+		if (!strcmp(product.getName(), productName)) {
 			findProd = &product;
 			return findProd;
 		}

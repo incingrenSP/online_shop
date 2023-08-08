@@ -1,5 +1,4 @@
-
-#include "Database.hpp"
+#include "database.hpp"
 #include <fstream>
  
 void Database::addUser(const User &user)

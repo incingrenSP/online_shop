@@ -7,7 +7,7 @@ void Cart::addToCart(Product product) {
 void Cart::removeFromCart(char* productName) {
 	int index{ 0 };
 	for (Product product : items) {
-		if (strcmpi(productName, product.getName())) {
+		if (strcmp(productName, product.getName())) {
 			items.erase(items.begin() + index);
 		}
 		index++;
@@ -18,8 +18,9 @@ double Cart::getTotal() {
 	for (Product product : items) {
 		total += product.getPrice();
 	}
+	return total;
 }
-int Cart::displayCart() {
+void Cart::displayCart() {
 	cout << setw(10) << "Product:" << "\tPrice:" << "\tQuantity:" << endl;
 	for (Product product : items) {
 		cout << product.getName() << setw(10) << product.getPrice() << setw(10) << product.getQuantity() << endl;

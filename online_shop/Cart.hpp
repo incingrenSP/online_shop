@@ -1,5 +1,5 @@
+#pragma once
 
-#ifndef _CART_HPP_
 #include "Product.hpp"
 #include <vector>
 #include <iomanip>
@@ -13,7 +13,5 @@ public:
 	void addToCart(Product);
 	void removeFromCart(char*);
 	double getTotal();
-	int displayCart();
+	void displayCart();
 };
-
-#endif // !_CART_HPP_
