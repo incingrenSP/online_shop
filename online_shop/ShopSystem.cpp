@@ -7,6 +7,7 @@ void ShopSystem::addUser(string username, string password)
 }
 
 void ShopSystem::addProduct(string name, double price, int quantity)
+
 {
 	Product newProduct(name, price, quantity);
 	products.push_back(newProduct);
@@ -43,6 +44,7 @@ Product* ShopSystem::findProduct(string productName)
 	Product* findProd{ nullptr };
 	for (Product& product : products) {
 		if (product.getName() == productName) {
+
 			findProd = &product;
 			return findProd;
 		}

@@ -35,6 +35,12 @@
     <ClCompile Include="ShopSystem.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="admin.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="database.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Product.hpp">
@@ -49,6 +55,7 @@
     <ClInclude Include="ShopSystem.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
+
     <ClInclude Include="Misc.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
