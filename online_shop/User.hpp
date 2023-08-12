@@ -2,7 +2,6 @@
 #define _USER_HPP_
 #include "Product.hpp"
 #include "Cart.hpp"
-#include <fstream>
 
 class User {
 private:

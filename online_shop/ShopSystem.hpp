@@ -4,7 +4,6 @@
 #include "Product.hpp"
 #include "Cart.hpp"
 #include "User.hpp"
-#include <fstream>
 
 class ShopSystem {
 private:
