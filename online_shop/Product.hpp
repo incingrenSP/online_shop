@@ -1,6 +1,7 @@
 
 #ifndef _PRODUCT_HPP_
 #define _PRODUCT_HPP_
+
 #include <iostream>
 using namespace std;
 
@@ -18,4 +19,3 @@ public:
 	int getQuantity();
 };
 
-#endif // !_PRODUCT_HPP_

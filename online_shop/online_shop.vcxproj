@@ -132,13 +132,16 @@
     <Text Include="users.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="admin.cpp" />
     <ClCompile Include="Cart.cpp" />
+    <ClCompile Include="database.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Product.cpp" />
     <ClCompile Include="ShopSystem.cpp" />
     <ClCompile Include="User.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="admin.hpp" />
     <ClInclude Include="Cart.hpp" />
     <ClInclude Include="Misc.hpp" />
     <ClInclude Include="Product.hpp" />

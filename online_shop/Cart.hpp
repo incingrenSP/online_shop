@@ -1,5 +1,7 @@
+
 #ifndef _CART_HPP_
 #define _CART_HPP_
+
 #include "Product.hpp"
 #include <vector>
 #include <iomanip>
@@ -15,5 +17,3 @@ public:
 	double getTotal();
 	void displayCart();
 };
-
-#endif // !_CART_HPP_

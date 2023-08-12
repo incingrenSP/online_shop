@@ -1,6 +1,7 @@
 
 #ifndef _SHOPSYS_HPP_
 #define _SHOPSYS_HPP_
+
 #include "Product.hpp"
 #include "Cart.hpp"
 #include "User.hpp"
@@ -17,4 +18,4 @@ public:
 	User* findUser(const string, const string);
 	Product* findProduct(string);
 };
-#endif // !_SHOPSYS_HPP_
+
