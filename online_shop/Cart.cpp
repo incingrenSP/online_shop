@@ -6,13 +6,14 @@ void Cart::addToCart(Product product) {
 
 void Cart::removeFromCart(string productName) {
 	int index{ 0 };
-	for (Product product : items) 
+	for (Product product : items) {
 		if (productName == product.getName()) {
 			items.erase(items.begin() + index);
 		}
 		index++;
 	}
 }
+
 double Cart::getTotal() {
 	double total{ 0.0 };
 	for (Product product : items) {

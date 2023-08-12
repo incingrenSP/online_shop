@@ -19,3 +19,5 @@ public:
 	int getQuantity();
 };
 
+#endif _PRODUCT_HPP_
+

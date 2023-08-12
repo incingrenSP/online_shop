@@ -5,7 +5,6 @@
 #include "Product.hpp"
 #include "Cart.hpp"
 #include "User.hpp"
-#include <fstream>
 
 class ShopSystem {
 private:
@@ -18,4 +17,6 @@ public:
 	User* findUser(const string, const string);
 	Product* findProduct(string);
 };
+
+#endif _SHOPSYS_HPP_
 

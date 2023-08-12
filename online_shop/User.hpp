@@ -4,7 +4,6 @@
 
 #include "Product.hpp"
 #include "Cart.hpp"
-#include <fstream>
 
 class User {
 private:
@@ -22,3 +21,4 @@ public:
 	void viewCart();
 };
 
+#endif _USER_HPP_
