@@ -1,19 +1,20 @@
-#pragma once
+
+#ifndef _PRODUCT_HPP_
+#define _PRODUCT_HPP_
 
 #include <iostream>
-#include <cstring>
 using namespace std;
 
 class Product
 {
 private:
-	char* name;
+	string name;
 	double price;
 	int quantity;
 public:
-	Product(char*, double, int);
+	Product(string, double, int);
 	~Product();
-	char* getName();
+	string getName();
 	double getPrice();
 	int getQuantity();
 };

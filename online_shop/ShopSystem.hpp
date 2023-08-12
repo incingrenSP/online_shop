@@ -1,17 +1,21 @@
-#pragma once
+
+#ifndef _SHOPSYS_HPP_
+#define _SHOPSYS_HPP_
 
 #include "Product.hpp"
 #include "Cart.hpp"
 #include "User.hpp"
+#include <fstream>
 
 class ShopSystem {
 private:
 	vector<User> users;
 	vector<Product> products;
 public:
-	void addUser(char*, char*);
-	void addProduct(char*, double, int);
-	User* findUser(const char*, const char*);
-	Product* findProduct(char*);
+	void addUser(string, string);
+	void addProduct(string, double, int);
+	void viewProducts();
+	User* findUser(const string, const string);
+	Product* findProduct(string);
 };
 

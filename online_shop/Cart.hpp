@@ -1,4 +1,6 @@
-#pragma once
+
+#ifndef _CART_HPP_
+#define _CART_HPP_
 
 #include "Product.hpp"
 #include <vector>
@@ -11,7 +13,7 @@ private:
 	vector<Product> items;
 public:
 	void addToCart(Product);
-	void removeFromCart(char*);
+	void removeFromCart(string);
 	double getTotal();
 	void displayCart();
 };

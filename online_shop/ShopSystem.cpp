@@ -1,22 +1,32 @@
 #include "ShopSystem.hpp"
 
-void ShopSystem::addUser(char* username, char* password)
+void ShopSystem::addUser(string username, string password)
 {
 	User newUser(username, password);
 	users.push_back(newUser);
 }
 
-void ShopSystem::addProduct(char* name, double price, int quantity)
+void ShopSystem::addProduct(string name, double price, int quantity)
+
 {
 	Product newProduct(name, price, quantity);
 	products.push_back(newProduct);
 }
 
-User* ShopSystem::findUser(const char* username, const char* password)
+void ShopSystem::viewProducts()
+{
+	for (Product& prod : products) {
+		cout << setw(30) << left << prod.getName() 
+			<< setw(10) << prod.getPrice() 
+			<< setw(10) << prod.getQuantity() << endl;
+	}
+}
+
+User* ShopSystem::findUser(const string username, const string password)
 {
 	User* findU{ nullptr };
 	for (User& user : users) {
-		if (!strcmp(user.getUsername(), username)) {
+		if (user.getUsername() == username) {
 			findU = &user;
 			if (user.loginCheck(password)) {
 				return findU;
@@ -29,11 +39,12 @@ User* ShopSystem::findUser(const char* username, const char* password)
 	return findU;
 }
 
-Product* ShopSystem::findProduct(char* productName)
+Product* ShopSystem::findProduct(string productName)
 {
 	Product* findProd{ nullptr };
 	for (Product& product : products) {
-		if (!strcmp(product.getName(), productName)) {
+		if (product.getName() == productName) {
+
 			findProd = &product;
 			return findProd;
 		}
