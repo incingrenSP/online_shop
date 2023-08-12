@@ -47,18 +47,65 @@ namespace Misc {
 	{
 		cout << "1. Browse" << endl;
 		cout << "2. View Cart" << endl;
-		cout << "3. Billing" << endl;
-		cout << "4. Exit" << endl;
+		cout << "3. Remove from Cart" << endl;
+		cout << "4. Logout" << endl;
+		cout << "5. Exit" << endl;
 		cin >> choice;
 	}
 
-	void checkChoice(ShopSystem& shop, int choice) {
+	void inputProducts(ShopSystem& shop, User* current)
+	{
+		string prodName;
+		double price{};
+		int quantity{};
+		cout << "Product Name: ";
+		cin >> prodName;
+		cout << "Quantity: ";
+		cin >> quantity;
+		if (shop.findProduct(prodName) == nullptr) {
+			std::cout << "Couldn't find product" << endl;
+			return;
+		}
+		price = shop.findProduct(prodName)->getPrice();
+		Product temp{ prodName, price, quantity };
+		current->addToCart(temp);
+	}
+
+	void removeProducts(ShopSystem& shop, User* current)
+	{
+		string prodName;
+		int quantity{};
+		cout << "Product Name: ";
+		cin >> prodName;
+		if (shop.findProduct(prodName) == nullptr) {
+			std::cout << "Couldn't find product" << endl;
+		}
+		else {
+			cout << "Remove all?[0 if all]: ";
+			cin >> quantity;
+			current->removeFromCart(prodName, quantity);
+		}
+	}
+
+	void checkChoice(ShopSystem& shop, int choice, User* current)
+	{
+		system("cls");
 		switch (choice) {
 		case 1:
 			shop.viewProducts();
+			inputProducts(shop, current);
 			break;
 		case 2:
-
+			current->viewCart();
+			break;
+		case 3:
+			current->viewCart();
+			removeProducts(shop, current);
+			break;
+		case 4:
+			break;
+		case 5:
+			exit(0);
 			break;
 		default:
 			exit(2);

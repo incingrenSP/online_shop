@@ -21,3 +21,8 @@ int Product::getQuantity()
 {
 	return quantity;
 }
+
+void Product::setQuantity(int num)
+{
+	quantity -= num;
+}

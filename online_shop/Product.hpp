@@ -17,6 +17,7 @@ public:
 	string getName();
 	double getPrice();
 	int getQuantity();
+	void setQuantity(int);
 };
 
 #endif _PRODUCT_HPP_

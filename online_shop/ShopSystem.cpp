@@ -15,11 +15,18 @@ void ShopSystem::addProduct(string name, double price, int quantity)
 
 void ShopSystem::viewProducts()
 {
+	cout << setw(30) << left << "Product"
+		<< setw(10) << "Price"
+		<< setw(10) << "Quantity" << endl;
+	cout << setfill('-') << setw(50) << "" << endl;
+	cout << setfill(' ');
 	for (Product& prod : products) {
-		cout << setw(30) << left << prod.getName() 
-			<< setw(10) << prod.getPrice() 
+		cout << setw(30) << left << prod.getName()
+			<< setw(10) << prod.getPrice()
 			<< setw(10) << prod.getQuantity() << endl;
 	}
+	cout << setfill('-') << setw(50) << "" << endl;
+	cout << setfill(' ');
 }
 
 User* ShopSystem::findUser(const string username, const string password)

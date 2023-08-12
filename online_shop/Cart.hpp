@@ -13,7 +13,7 @@ private:
 	vector<Product> items;
 public:
 	void addToCart(Product);
-	void removeFromCart(string);
+	void removeFromCart(string, int num);
 	double getTotal();
 	void displayCart();
 };

@@ -4,11 +4,19 @@ void Cart::addToCart(Product product) {
 	items.push_back(product);
 }
 
-void Cart::removeFromCart(string productName) {
+void Cart::removeFromCart(string productName, int num) {
 	int index{ 0 };
 	for (Product product : items) {
 		if (productName == product.getName()) {
-			items.erase(items.begin() + index);
+			if (!num) {
+				items.erase(items.begin() + index);
+			}
+			else if (num >= product.getQuantity()) {
+				items.erase(items.begin() + index);
+			}
+			else {
+				product.setQuantity(num);
+			}
 		}
 		index++;
 	}
@@ -17,15 +25,25 @@ void Cart::removeFromCart(string productName) {
 double Cart::getTotal() {
 	double total{ 0.0 };
 	for (Product product : items) {
-		total += product.getPrice();
+		total += product.getPrice() * product.getQuantity();
 	}
 	return total;
 }
 void Cart::displayCart() {
-	cout << setw(10) << "Product:" << "\tPrice:" << "\tQuantity:" << endl;
+	cout << setw(30) << left << "Product"
+		<< setw(10) << "Price"
+		<< setw(10) << "Quantity" << endl;
+	cout << setfill('-') << setw(50) << "" << endl;
+	cout << setfill(' ');
 	for (Product product : items) {
-		cout << setw(20) << product.getName() 
+		cout << setw(30) << product.getName() 
 			<< setw(10) << product.getPrice()
 			<< setw(10) << product.getQuantity() << endl;
 	}
+	cout << setfill('-') << setw(50) << "" << endl;
+	cout << setfill(' ');
+	cout << setw(40) << left << "Total"
+		<< setw(10) << getTotal() << endl;
+	cout << setfill('-') << setw(50) << "" << endl;
+	cout << setfill(' ');
 }

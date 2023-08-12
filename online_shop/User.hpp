@@ -16,7 +16,7 @@ public:
 	string getUsername() const;
 	bool loginCheck(const string);
 	void addToCart(Product);
-	void removeFromCart(string);
+	void removeFromCart(string, int num = 0);
 	double checkout();
 	void viewCart();
 };

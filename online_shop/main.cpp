@@ -16,7 +16,14 @@ int main()
 
 	string username;
 	string password;
-	int choice{ 1 };
+
+
+	int choice{ 0 };
+
+	User* currentUser{ nullptr };
+reset:
+
+	choice = 1;
 
 	while (choice) {
 		system("cls");
@@ -25,12 +32,15 @@ int main()
 		cout << "Password: ";
 		cin >> password;
 
-		User* currentUser = shopSys.findUser(username, password);
+		currentUser = shopSys.findUser(username, password);
 		if (currentUser == nullptr) {
 			//error handling
 			cerr << "Username or Password is incorrect." << endl;
 			cout << "Try again?[0|1]:";
 			cin >> choice;
+			if (!choice) {
+				exit(1);
+			}
 		}
 		else {
 			break;
@@ -38,8 +48,17 @@ int main()
 	}
 	// shopping actions - add to cart, view cart, view total
 	system("cls");
-	cout << setw(20) << right << username << endl << endl;
-	Misc::printMiscs(choice);
-	Misc::checkChoice(shopSys, choice);
+	while (choice < 4) {
+		cout << setfill('/') << setw(50) << "" << endl;
+		cout << setfill(' ');
+		cout << "User: " << setw(20) << left << username << endl;
+		cout << setfill('/') << setw(50) << "" << endl;
+		cout << setfill(' ') << endl;
+		Misc::printMiscs(choice);
+		Misc::checkChoice(shopSys, choice, currentUser);
+	}
+	if (choice == 4) {
+		goto reset;
+	}
 	return 0;
 }

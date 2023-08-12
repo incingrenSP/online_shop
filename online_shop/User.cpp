@@ -22,9 +22,9 @@ void User::addToCart(Product product)
 	cart.addToCart(product);
 }
 
-void User::removeFromCart(string productName)
+void User::removeFromCart(string productName, int num)
 {
-	cart.removeFromCart(productName);
+	cart.removeFromCart(productName, num);
 }
 
 double User::checkout()
