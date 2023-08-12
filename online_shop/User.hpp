@@ -21,3 +21,4 @@ public:
 	void viewCart();
 };
 
+#endif _USER_HPP_

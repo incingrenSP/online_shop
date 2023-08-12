@@ -18,3 +18,5 @@ public:
 	Product* findProduct(string);
 };
 
+#endif _SHOPSYS_HPP_
+

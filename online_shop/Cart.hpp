@@ -17,3 +17,5 @@ public:
 	double getTotal();
 	void displayCart();
 };
+
+#endif _CART_HPP_
