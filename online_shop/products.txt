@@ -1,0 +1,5 @@
+SakuraMechanicalPencils	250.25	150
+.5mm2BLeads	33.5	360
+A4Sheets	2.5	1625
+GelPenRefills	11.96	320
+MathsTextBook	350.14	7

@@ -1,18 +1,13 @@
 #include "Product.hpp"
 
-Product::Product(char* p_name, double p_price, int p_quantity)
-	:name(nullptr), price(p_price), quantity(p_quantity)
-{
-	name = new char[strlen(p_name) + 1];
-	strcpy(name, p_name);
-}
+Product::Product(string p_name, double p_price, int p_quantity)
+	:name(p_name), price(p_price), quantity(p_quantity)
+{}
 
 Product::~Product()
-{
-	delete[] name;
-}
+{}
 
-char* Product::getName()
+string Product::getName()
 {
 	return name;
 }

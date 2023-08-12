@@ -1,19 +1,21 @@
 #ifndef _USER_HPP_
+#define _USER_HPP_
 #include "Product.hpp"
 #include "Cart.hpp"
+#include <fstream>
 
 class User {
 private:
-	char* username;
-	char* password;
+	string username;
+	string password;
 	Cart cart;
 public:
-	User(char*, char*);
+	User(string, string);
 	~User();
-	char* getUsername() const;
-	bool loginCheck(const char*);
+	string getUsername() const;
+	bool loginCheck(const string);
 	void addToCart(Product);
-	void removeFromCart(char*);
+	void removeFromCart(string);
 	double checkout();
 	void viewCart();
 };

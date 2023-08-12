@@ -1,5 +1,5 @@
-
 #ifndef _CART_HPP_
+#define _CART_HPP_
 #include "Product.hpp"
 #include <vector>
 #include <iomanip>
@@ -11,9 +11,9 @@ private:
 	vector<Product> items;
 public:
 	void addToCart(Product);
-	void removeFromCart(char*);
+	void removeFromCart(string);
 	double getTotal();
-	int displayCart();
+	void displayCart();
 };
 
 #endif // !_CART_HPP_

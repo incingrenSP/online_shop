@@ -16,6 +16,8 @@
   </ItemGroup>
   <ItemGroup>
     <Text Include="pseudocode.txt" />
+    <Text Include="users.txt" />
+    <Text Include="products.txt" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -45,6 +47,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="ShopSystem.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Misc.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
