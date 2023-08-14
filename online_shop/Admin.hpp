@@ -1,7 +1,6 @@
 #include <fstream>
 #include <iostream>
 #include <string>
-#include <vector>
 
 #include "ShopSystem.hpp"
 
@@ -75,12 +74,19 @@ namespace Admin {
 
 	void removeProducts(ShopSystem& shop)
 	{
-		fstream fprod("products.txt", ios::app);
+		fstream fprod("products.txt", ios::in | ios::binary);
 		if (!fprod) {
 			cerr << "Couldn't open file | File doesn't exist" << endl;
 			exit(1);
 		}
+		fstream ftmp("temp.txt", ios::out | ios::binary);
+		if (!ftmp) {
+			cerr << "Error creating temporary file" << endl;
+			exit(1);
+		}
 		string name;
+		string temp;
+		string temp2;
 		string pass;
 		cout << "Enter product to remove: ";
 		cin >> name;
@@ -88,13 +94,28 @@ namespace Admin {
 		cin >> pass;
 		if (!shop.findUser("Admin", pass)) {
 			cerr << "Wrong password\nPlease try again" << endl;
+			fprod.close();
+			ftmp.close();
+			return;
 		}
 		else {
 			if (!shop.findProduct(name)) {
 				cerr << "Couldn't find product" << endl;
+				fprod.close();
+				ftmp.close();
+				return;
 			}
 			else {
 				shop.removeProduct(name);
+				while (getline(fprod, temp)) {
+					cout << temp;
+					fprod >> temp2;
+
+				}
+				fprod.close();
+				ftmp.close();
+				remove("products.txt");
+				rename("temp.txt", "products.txt");
 			}
 		}
 	}
@@ -123,7 +144,6 @@ namespace Admin {
 				shop.removeUser(user);
 			}
 		}
-		fuser.close();
 	}
 
 	void checkChoice(ShopSystem& shopSys, int choice, User* user) {
