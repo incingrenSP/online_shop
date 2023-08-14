@@ -5,6 +5,13 @@
 #include <fstream>
 
 namespace Misc {
+	void printUser(string user) {
+		cout << setfill('/') << setw(50) << "" << endl;
+		cout << setfill(' ');
+		cout << "User: " << setw(20) << left << user << endl;
+		cout << setfill('/') << setw(50) << "" << endl;
+		cout << setfill(' ') << endl;
+	}
 	void userIP(ShopSystem& shop)
 	{
 		string name{ " " };
@@ -62,6 +69,9 @@ namespace Misc {
 		cin >> prodName;
 		cout << "Quantity: ";
 		cin >> quantity;
+		/*int c = count(prodName.begin(), prodName.end(), ' ');
+		remove(prodName.begin(), prodName.end(), ' ');
+		prodName.resize(prodName.length() - c);*/
 		if (shop.findProduct(prodName) == nullptr) {
 			std::cout << "Couldn't find product" << endl;
 			return;
@@ -77,6 +87,9 @@ namespace Misc {
 		int quantity{};
 		cout << "Product Name: ";
 		cin >> prodName;
+		/*int c = count(prodName.begin(), prodName.end(), ' ');
+		remove(prodName.begin(), prodName.end(), ' ');
+		prodName.resize(prodName.length() - c);*/
 		if (shop.findProduct(prodName) == nullptr) {
 			std::cout << "Couldn't find product" << endl;
 		}
@@ -92,15 +105,20 @@ namespace Misc {
 		system("cls");
 		switch (choice) {
 		case 1:
+			printUser(current->getUsername());
 			shop.viewProducts();
 			inputProducts(shop, current);
+			system("cls");
 			break;
 		case 2:
+			printUser(current->getUsername());
 			current->viewCart();
 			break;
 		case 3:
+			printUser(current->getUsername());
 			current->viewCart();
 			removeProducts(shop, current);
+			system("cls");
 			break;
 		case 4:
 			break;
