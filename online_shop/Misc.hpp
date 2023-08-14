@@ -69,9 +69,6 @@ namespace Misc {
 		cin >> prodName;
 		cout << "Quantity: ";
 		cin >> quantity;
-		/*int c = count(prodName.begin(), prodName.end(), ' ');
-		remove(prodName.begin(), prodName.end(), ' ');
-		prodName.resize(prodName.length() - c);*/
 		if (shop.findProduct(prodName) == nullptr) {
 			std::cout << "Couldn't find product" << endl;
 			return;
@@ -87,9 +84,6 @@ namespace Misc {
 		int quantity{};
 		cout << "Product Name: ";
 		cin >> prodName;
-		/*int c = count(prodName.begin(), prodName.end(), ' ');
-		remove(prodName.begin(), prodName.end(), ' ');
-		prodName.resize(prodName.length() - c);*/
 		if (shop.findProduct(prodName) == nullptr) {
 			std::cout << "Couldn't find product" << endl;
 		}
