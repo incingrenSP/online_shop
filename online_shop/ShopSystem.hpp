@@ -13,7 +13,10 @@ private:
 public:
 	void addUser(string, string);
 	void addProduct(string, double, int);
+	void removeUser(string);
+	void removeProduct(string);
 	void viewProducts();
+	void viewUsers();
 	User* findUser(const string, const string);
 	Product* findProduct(string);
 };

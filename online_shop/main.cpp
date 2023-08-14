@@ -6,6 +6,7 @@
 #include "User.hpp"
 #include "ShopSystem.hpp"
 #include "Misc.hpp"
+#include "Admin.hpp"
 
 int main()
 {
@@ -50,13 +51,27 @@ reset:
 		++tries;
 	}
 	system("cls");
-	while (choice < 4) {
-		Misc::printUser(username);
-		Misc::printMiscs(choice);
-		Misc::checkChoice(shopSys, choice, currentUser);
+
+	if (!(Admin::checkLogin(currentUser, password)))
+	{
+		while (choice < 4) {
+			Misc::printUser(username);
+			Misc::printMiscs(choice);
+			Misc::checkChoice(shopSys, choice, currentUser);
+		}
+		if (choice == 4) {
+			goto reset;
+		}
 	}
-	if (choice == 4) {
-		goto reset;
+	else {
+		while (choice < 7) {
+			Misc::printUser(username);
+			Admin::printMiscs(choice);
+			Admin::checkChoice(shopSys, choice, currentUser);
+		}
+		if (choice == 7) {
+			goto reset;
+		}
 	}
 	return 0;
 }
