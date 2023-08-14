@@ -64,12 +64,12 @@ reset:
 		}
 	}
 	else {
-		while (choice < 7) {
+		while (choice < 5) {
 			Misc::printUser(username);
 			Admin::printMiscs(choice);
 			Admin::checkChoice(shopSys, choice, currentUser);
 		}
-		if (choice == 7) {
+		if (choice == 5) {
 			goto reset;
 		}
 	}
