@@ -1,12 +1,12 @@
 #include <fstream>
 #include <Windows.h>
 
-#include "Product.hpp"
-#include "Cart.hpp"
-#include "User.hpp"
-#include "ShopSystem.hpp"
-#include "Misc.hpp"
-#include "Admin.hpp"
+#include "src/Product.hpp"
+#include "src/Cart.hpp"
+#include "src/User.hpp"
+#include "src/ShopSystem.hpp"
+#include "src/Misc.hpp"
+#include "src/Admin.hpp"
 
 int main()
 {

@@ -1,0 +1,7 @@
+[
+  {
+    "label": "CMake: Build and Run",
+    "command": "mkdir -p build && cd build && cmake .. && make && ./${PROJECT_NAME:-main}",
+    "use_terminal": true,
+  },
+]

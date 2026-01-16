@@ -1,0 +1,9 @@
+# ninja log v6
+28	2889	7902702484183850	CMakeFiles/MyProject.dir/src/Product.cpp.obj	b921e4ddd7d5646
+93	4106	7902702484812472	CMakeFiles/MyProject.dir/src/User.cpp.obj	20f1a769a1b4fb0d
+17	4840	7902702483782762	CMakeFiles/MyProject.dir/src/Cart.cpp.obj	c68ce5e092643e8d
+78	4917	7902702484424657	CMakeFiles/MyProject.dir/src/ShopSystem.cpp.obj	8be1e35d642b227d
+5	7118	7902702483616927	CMakeFiles/MyProject.dir/main.cpp.obj	189168fb6c563eb9
+7135	7698	7902702555103104	MyProject.exe	589be8888121cdfd
+9	2975	7902706239467114	CMakeFiles/MyProject.dir/main.cpp.obj	189168fb6c563eb9
+2997	3325	7902706269515724	MyProject.exe	589be8888121cdfd

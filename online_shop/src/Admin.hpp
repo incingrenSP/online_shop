@@ -7,7 +7,7 @@
 //ADMIN PRIVILEGES
 
 namespace Admin {
-	bool checkLogin(User* current, string password) 
+	bool checkLogin(User* current, string password)
 	{
 		if (current->getUsername() == "Admin" && current->loginCheck(password))
 			return true;
@@ -27,7 +27,7 @@ namespace Admin {
 
 	void addProducts(ShopSystem& shop)
 	{
-		fstream fprod("products.txt", ios::app | ios::ate);
+		fstream fprod("src/products.txt", ios::app | ios::ate);
 		if (!fprod) {
 			cerr << "Couldn't open file | File doesn't exist" << endl;
 			exit(1);
@@ -52,7 +52,7 @@ namespace Admin {
 
 	void addUsers(ShopSystem& shop)
 	{
-		fstream fuser("users.txt", ios::app | ios::ate);
+		fstream fuser("src/users.txt", ios::app | ios::ate);
 		if (!fuser) {
 			cerr << "Couldn't open file | File doesn't exist" << endl;
 			exit(1);

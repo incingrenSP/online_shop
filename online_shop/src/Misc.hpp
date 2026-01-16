@@ -18,7 +18,7 @@ namespace Misc {
 	{
 		string name;
 		string password;
-		fstream fuser{ "users.txt", ios::in };
+		fstream fuser{ "src/users.txt", ios::in };
 		if (!fuser) {
 			cerr << "Couldn't open file | Couldn't find file : users.txt" << endl;
 			exit(1);
@@ -37,7 +37,7 @@ namespace Misc {
 		string name;
 		double price{ 0 };
 		int quantity{ 0 };
-		fstream fprod{ "products.txt", ios::in };
+		fstream fprod{ "src/products.txt", ios::in };
 		if (!fprod) {
 			cerr << "Couldn't open file | Couldn't find file : products.txt" << endl;
 			exit(1);
